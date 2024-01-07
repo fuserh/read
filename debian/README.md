@@ -73,7 +73,7 @@ apt install linux-image-amd64 grub-pc locales
 接下来，你需要创建一个启动脚本，比如`debian-iso/rootfs/init`，用于在系统启动时执行一些操作，比如挂载文件系统、切换根目录等。你可以使用下面的命令来创建它：
 
 ```sh
-cat > debian-iso/rootfs/init << EOF
+cat > /init << EOF
 #!/bin/sh
 
 # 挂载文件系统
@@ -86,7 +86,7 @@ exec /sbin/switch_root /rootfs /init /bin/sh
 EOF
 
 # 给予执行权限
-chmod +x debian-iso/rootfs/init
+chmod +x /init
 ```
 
 最后，你需要创建一个ISO文件，比如`debian-iso.iso`，用于在x64实体机上安装你的系统。你可以使用下面的命令来创建它：
