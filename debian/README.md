@@ -16,7 +16,9 @@ mkdir debian-iso
 接下来，你需要使用debootstrap命令来创建一个基本的debian 12系统，比如`debian-iso/rootfs`。你可以使用下面的命令来创建它：
 
 ```sh
-sudo debootstrap --arch=amd64 --variant=minbase bookworm debian-iso/rootfs http://deb.debian.org/debian
+# sudo debootstrap --arch=amd64 --variant=minbase bookworm debian-iso/rootfs http://deb.debian.org/debian
+
+sudo debootstrap --arch=amd64 bookworm debian-iso/rootfs https://deb.debian.org/debian
 ```
 
 注意，这里的`bookworm`是debian 12的代号，你也可以使用其他的镜像源地址，比如`http://mirrors.ustc.edu.cn/debian`。
